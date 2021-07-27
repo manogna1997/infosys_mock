@@ -7,6 +7,7 @@ import { OrderPageComponent } from "./order-page/order-page.component";
 import { HomePageComponent } from "./home-page/home-page.component";
 
 import {HttpClientModule} from "@angular/common/http";
+import { OrderItemComponent } from './order-item/order-item.component';
 
 
 
@@ -14,7 +15,8 @@ import {HttpClientModule} from "@angular/common/http";
   declarations: [
     AppComponent,
     HomePageComponent,
-    OrderPageComponent
+    OrderPageComponent,
+    OrderItemComponent
   ],
   imports: [
     BrowserModule,
