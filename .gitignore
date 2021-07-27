@@ -1,2 +1,3 @@
 /.idea/
-/infosys_mock_ui_app/node_modules/
+/infosys_mock_app_ui/node_modules/
+/infosys_mock_app_ui/dist/
