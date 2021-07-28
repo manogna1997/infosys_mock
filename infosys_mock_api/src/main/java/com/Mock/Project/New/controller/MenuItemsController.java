@@ -23,6 +23,7 @@ public class MenuItemsController {
      * @param orderedItems
      * @return
      */
+    @CrossOrigin
     @PostMapping("/addordereditem")
     public OrderedItem addOrderedItems(@RequestBody OrderedItem orderedItems) {
         return service.saveOrderedItems(orderedItems);
@@ -44,9 +45,10 @@ public class MenuItemsController {
      * @return
      */
 
+    @CrossOrigin
     @GetMapping("/getallordereditems")
     public List<OrderedItem> findAllOrderedItems() {
-
+        log.info("getallordereditems -> is called ");
         return service.getOrderedItem();
     }
 
@@ -58,7 +60,7 @@ public class MenuItemsController {
 
     @GetMapping("/getmenuitem/{id}")
     public MenuItem findMenuById(@PathVariable int id){
-
+        log.info("getmenuitem/{} -> is called ",id);
         return service.getMenuItemsById(id);
     }
 

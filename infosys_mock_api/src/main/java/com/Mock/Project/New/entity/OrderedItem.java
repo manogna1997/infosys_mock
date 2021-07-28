@@ -9,6 +9,7 @@ import lombok.NonNull;
 
 import javax.persistence.*;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 
@@ -26,21 +27,17 @@ public class OrderedItem {
     private String name;
     @NonNull
     private double totalprice;
-    @OneToMany
-    List<MenuItem> menuItems = new ArrayList<>();
-
-    public OrderedItem(String name){
-        this.name = name;
-    }
-
-    public List<MenuItem> getMenuItems() {
-        return menuItems;
-    }
-
-    public void setMenuItems(List<MenuItem> menuItems) {
-        this.menuItems = menuItems;
-    }
-
+    @ManyToMany
+//            (
+//            cascade = {
+//            CascadeType.MERGE
+//    })
+//    @JoinTable(
+//            name = "ORDER_TBL_MENU_ITEM_TBL",
+//            joinColumns = { @JoinColumn(name = "or_id") },
+//            inverseJoinColumns = { @JoinColumn(name = "menu_id") }
+//    )
+    private Collection<MenuItem> menuItems = new ArrayList<>();
 
 
 
