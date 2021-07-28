@@ -1,5 +1,6 @@
 package com.Mock.Project.New.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.sun.istack.NotNull;
 import lombok.*;
 import org.hibernate.annotations.Fetch;
@@ -19,7 +20,7 @@ import java.util.Set;
 public class MenuItem {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     @NotNull
     private String name;
@@ -29,6 +30,8 @@ public class MenuItem {
     @NotNull
     private double price;
 
-    @ManyToMany()
+
+    @JsonIgnore
+    @ManyToMany(mappedBy = "menuItems",cascade = CascadeType.ALL,fetch = FetchType.LAZY)
     private List<OrderedItem> orders ;
 }

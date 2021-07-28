@@ -10,7 +10,6 @@ export interface IMenuItem {
     id: number ;
     ingredients: string;
     price: number;
-    orders: any;
 }
 
 export class OrderedItem implements IOrderedItem {

@@ -21,7 +21,7 @@ import java.util.List;
 public class OrderedItem {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     @NotNull
     private String name;
@@ -32,11 +32,11 @@ public class OrderedItem {
 //            cascade = {
 //            CascadeType.MERGE
 //    })
-//    @JoinTable(
-//            name = "ORDER_TBL_MENU_ITEM_TBL",
-//            joinColumns = { @JoinColumn(name = "or_id") },
-//            inverseJoinColumns = { @JoinColumn(name = "menu_id") }
-//    )
+    @JoinTable(
+            name = "ORDER_TBL_MENU_ITEM_TBL",
+            joinColumns = { @JoinColumn(name = "or_id") },
+            inverseJoinColumns = { @JoinColumn(name = "menu_id") }
+    )
     private Collection<MenuItem> menuItems = new ArrayList<>();
 
 
