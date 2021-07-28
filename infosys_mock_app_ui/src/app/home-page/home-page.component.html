@@ -4,7 +4,7 @@
     <div class="row">
         <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
             <div class="col-auto">
-                <input id="name" type="text" formControlName="name" required>
+                <input id="name" type="text" placeholder="OrderName" formControlName="name" required>
             </div>
             <div class="col-auto">
                 <button type="button" class="btn btn-primary" type="submit">Submit Order</button>

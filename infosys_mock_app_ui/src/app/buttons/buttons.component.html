@@ -1,11 +1,12 @@
 
+<script src="../order-page/order-page.component.ts"></script>
 <div class="container">
     <div class="row justify-content-md-center">
-        <div class="col text-center">
-            <a href="get" class="btn btn-info" role="button">Place Order</a>
-        </div>
-        <div class="col text-center">
-            <a href="add" class="btn btn-info" role="button">Checkout</a>
-        </div>
+        <span class="col text-center">
+            <button onclick="location.href='/get'" class="btn btn-info" role="button">Place Order</button>
+        </span>
+        <span class="col text-center">
+            <button onclick="location.href='/add'" class="btn btn-success" role="button" [disabled]="orders.length < 1? true: null">Checkout</button>
+        </span>
     </div>
 </div>

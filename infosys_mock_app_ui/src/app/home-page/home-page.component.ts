@@ -57,6 +57,11 @@ export class HomePageComponent implements OnInit {
         this.neworder.name = this.checkoutForm.value.name;
         if(this.neworder.menuItems.length < 1){
             alert("Please select items to order")
+            return;
+        }
+        if(this.checkoutForm.value.name.length < 4){
+            alert("Please add your name to the order")
+            return;
         }
         this.neworder.name = this.checkoutForm.value.name;
         let prize = 0;

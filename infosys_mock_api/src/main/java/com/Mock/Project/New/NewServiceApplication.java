@@ -21,11 +21,11 @@ public class NewServiceApplication {
 	@Bean
 	public ApplicationRunner initializer(OrderService service) {
 		return args -> service.saveMenusItems(Arrays.asList(
-			new MenuItem(0,"Taco", Arrays.asList("chicken","totias").stream().collect(Collectors.toSet()), 3.5,null),
-				new MenuItem(1,"Taco2", Arrays.asList("chicken","totias").stream().collect(Collectors.toSet()), 3.5,null),
-				new MenuItem(2,"Taco3", Arrays.asList("chicken","totias").stream().collect(Collectors.toSet()), 3.5, null),
-				new MenuItem(3,"Taco4", Arrays.asList("chicken","totias").stream().collect(Collectors.toSet()), 3.5,null),
-				new MenuItem(5,"Taco5", Arrays.asList("chicken","totias").stream().collect(Collectors.toSet()), 3.5,null)
+			new MenuItem(1,"Taco", Arrays.asList("chicken","Tortilla","onion","pickle").stream().collect(Collectors.toSet()), 3.5,null),
+				new MenuItem(2,"Cheese sandwich", Arrays.asList("cheese","bread","tomatoes","lettuce","mayo","sauce").stream().collect(Collectors.toSet()), 3.5,null),
+				new MenuItem(3,"Chicken burger", Arrays.asList("chicken","Burger buns","lettuce","tomatoes","hot sauce").stream().collect(Collectors.toSet()), 3.5, null),
+				new MenuItem(4,"Pasta", Arrays.asList("spinach","pasta","chicken","basil paste","parmesan").stream().collect(Collectors.toSet()), 3.5,null),
+				new MenuItem(5,"Pizza", Arrays.asList("jalapenos","chicken","cheese","marinara").stream().collect(Collectors.toSet()), 3.5,null)
 		));
 	}
 }
